@@ -13,5 +13,11 @@
 */
 
 export default function(array) {
+    var ids = [];
 
+    array.forEach(function(elm) {
+        ids.push(elm.id);
+    });
+
+    return Math.max.apply(null, ids) + 1;
 }
