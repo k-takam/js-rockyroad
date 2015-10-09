@@ -14,9 +14,9 @@
 */
 
 export default function(array) {
-    var ret = [].concat(array);
+    let ret = [].concat(array);
 
-    ret.sort(function(objA, objB) {
+    ret.sort((objA, objB) => {
         if (objA.id > objB.id) {
             return 1;
         }
