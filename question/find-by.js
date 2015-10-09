@@ -9,6 +9,22 @@
   @returns {Object}
 */
 
-export default function(array, object) {
+var findByObj = (obj, other) => {
+    let retFlg = false;
 
+    for (let prop in other) {
+        if (obj.hasOwnProperty(prop)) {
+            retFlg = JSON.stringify(obj[prop]) === JSON.stringify(other[prop]) ? true : false;
+        }
+    }
+
+    return retFlg ? true : false;
+};
+
+export default function(array, object) {
+    let ret = array.filter(obj => {
+        return findByObj(obj, object);
+    });
+
+    return ret.length <= 0 ? null : ret[0];
 }
