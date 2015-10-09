@@ -14,5 +14,18 @@
 */
 
 export default function(array) {
+    var ret = [].concat(array);
 
+    ret.sort(function(objA, objB) {
+        if (objA.id > objB.id) {
+            return 1;
+        }
+        if (objA.id < objB.id) {
+            return -1;
+        }
+
+        return 0;
+    });
+
+    return ret;
 }
