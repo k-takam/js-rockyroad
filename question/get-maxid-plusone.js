@@ -15,7 +15,7 @@
 export default function(array) {
     let ids = [];
 
-    array.forEach((elm) => {
+    array.forEach(elm => {
         ids.push(elm.id);
     });
 

@@ -13,6 +13,20 @@
   @returns {Array}
 */
 
-export default function(array) {
+var flatten = (arr, resultArr) => {
+    let ret = resultArr || [];
 
+    arr.forEach(elm => {
+        if (Array.isArray(elm)) {
+            flatten(elm, ret);
+        } else {
+            ret.push(elm);
+        }
+    });
+
+    return ret;
+};
+
+export default function(array) {
+    return flatten(array);
 }
