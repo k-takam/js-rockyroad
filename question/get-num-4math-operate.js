@@ -27,6 +27,8 @@ var fourArithmeticOperations = (leftOperand, rightOperand, operatorKey) => {
             return leftOperand * rightOperand;
         case 'div':
             return Math.floor(leftOperand / rightOperand);
+        default:
+            return undefined;
     }
 };
 
