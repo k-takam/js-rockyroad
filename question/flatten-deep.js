@@ -16,11 +16,11 @@
 var flatten = (arr, resultArr) => {
     let ret = resultArr || [];
 
-    arr.forEach(elm => {
-        if (Array.isArray(elm)) {
-            flatten(elm, ret);
+    arr.forEach(value => {
+        if (Array.isArray(value)) {
+            flatten(value, ret);
         } else {
-            ret.push(elm);
+            ret.push(value);
         }
     });
 
