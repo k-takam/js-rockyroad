@@ -19,6 +19,32 @@
   @returns {Object}
 */
 
-export default function(object) {
+const objectValues = obj => {
+    let ret = [];
 
+    for (const prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            ret.push(obj[prop]);
+        }
+    }
+
+    ret = ret.sort().filter((elm, index, self) => {
+        return self.indexOf(elm) === index;
+    });
+
+    return ret;
+};
+
+export default function(object) {
+    let retObj = {};
+    const keys = Object.keys(object);
+    const values = objectValues(object);
+
+    values.forEach(value => {
+        retObj[value] = keys.filter((elm, index) => {
+            return value === object[elm];
+        });
+    });
+
+    return retObj;
 }
