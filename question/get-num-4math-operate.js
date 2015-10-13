@@ -17,6 +17,31 @@
   @returns {Number}
 */
 
-export default function(number, object) {
+var fourArithmeticOperations = (leftOperand, rightOperand, operatorKey) => {
+    switch (operatorKey) {
+        case 'add':
+            return leftOperand + rightOperand;
+        case 'sub':
+            return leftOperand - rightOperand;
+        case 'multi':
+            return leftOperand * rightOperand;
+        case 'div':
+            return Math.floor(leftOperand / rightOperand);
+    }
+};
 
+export default function(number, object) {
+    var keys = Object.keys(object);
+
+    keys.forEach(key => {
+        if (Array.isArray(object[key])) {
+            object[key].forEach(value => {
+                number = fourArithmeticOperations(number, value, key);
+            });
+        } else {
+            number = fourArithmeticOperations(number, object[key], key);
+        }
+    });
+
+    return number;
 }
