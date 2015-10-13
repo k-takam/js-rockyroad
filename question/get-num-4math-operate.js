@@ -17,7 +17,7 @@
   @returns {Number}
 */
 
-var fourArithmeticOperations = (leftOperand, rightOperand, operatorKey) => {
+const fourArithmeticOperations = (leftOperand, rightOperand, operatorKey) => {
     switch (operatorKey) {
         case 'add':
             return leftOperand + rightOperand;
@@ -33,7 +33,7 @@ var fourArithmeticOperations = (leftOperand, rightOperand, operatorKey) => {
 };
 
 export default function(number, object) {
-    var keys = Object.keys(object);
+    const keys = Object.keys(object);
 
     keys.forEach(key => {
         if (Array.isArray(object[key])) {

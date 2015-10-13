@@ -9,10 +9,10 @@
   @returns {Object}
 */
 
-var findByObj = (obj, other) => {
+const findByObj = (obj, other) => {
     let retFlg = false;
 
-    for (let prop in other) {
+    for (const prop in other) {
         if (obj.hasOwnProperty(prop)) {
             retFlg = JSON.stringify(obj[prop]) === JSON.stringify(other[prop]) ? true : false;
         }

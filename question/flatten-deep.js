@@ -13,7 +13,7 @@
   @returns {Array}
 */
 
-var flatten = (arr, resultArr) => {
+const flatten = (arr, resultArr) => {
     let ret = resultArr || [];
 
     arr.forEach(value => {

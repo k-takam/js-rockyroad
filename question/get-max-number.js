@@ -6,7 +6,7 @@
   @returns {Number}
 */
 
-var permutation = (ret, preview, array, max) => {
+const permutation = (ret, preview, array, max) => {
     if (!max) max = array.length;
 
     if (max > 0) {
